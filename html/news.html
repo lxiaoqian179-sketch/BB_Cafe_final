@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew & Belle Café</title>
+    <link rel="stylesheet" href="../CSS/news.css">
+    <!-- 手寫英文字體連結 -->
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- 關於品牌:中文內文-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <!-- 導覽列 -->
+    <header class="navbar">
+
+        <!-- 左上角logo -->
+        <div class="logo">
+            <a href="../html/home.html">
+                <img src="../img/logo-horizontal-06.png" alt="Brew & Belle Café Logo">
+            </a>
+        </div>
+
+        <!-- 桌機版選單 -->
+        <nav aria-label="主選單" class="desktop-nav">
+            <ul class="nav-links">
+                <li><a href="../html/about.html">Story</a></li>
+                <li><a href="../html/menu.html">Menu</a></li>
+                <li><a href="../html/news.html">News</a></li>
+                <li><a href="../html/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- 漢堡按鈕（手機版） -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </header>
+
+    <!-- 手機版滑出選單（header 之後） -->
+    <ul class="mobile-menu">
+        <li><a href="../html/about.html">Story</a></li>
+        <li><a href="../html/menu.html">Menu</a></li>
+        <li><a href="../html/news.html">News</a></li>
+        <li><a href="../html/contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Hero news大圖區 -->
+    <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="../video/news-hero.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-text">
+            <h1>News<br>Keep Surprises and Freshness Alive.</h1>
+
+
+        </div>
+    </section>
+
+
+
+    <!------------------------- news區塊---------------------------->
+
+    <section class="news-page">
+        <!------------ menu分類按鈕列----------->
+        <div id="newsTop" class="news-tabs">
+            <button data-target="all" class="active">―全部 All―</button>
+            <button data-target="news">―最新活動 Latest Events―</button>
+            <button data-target="limit">―期間限定 Limited Menu―</button>
+            <button data-target="media">―媒體報導 Media Features―</button>
+        </div>
+
+        <!-- ================= 所有分類（用於 ALL 顯示） ================ -->
+
+        <!-- 單一分類區塊：最新活動 -->
+        <section class="news-section" data-category="news">
+            <h2>Latest Events</h2>
+            <p class="desc">以季節主題打造專屬驚喜，無論是節慶優惠、回饋活動或限定抽獎，都希望在每個時刻陪伴你享受生活的美好。</p>
+
+            <div class="news-grid">
+
+                <!-- 卡片 1 -->
+                <div class="news-item polaroid">
+                    <div class="polaroid-inner">
+                        <img src="../img/news/news-a.jpg" alt="冬日暖心優惠">
+                        <h5>冬日暖心優惠</h5>
+                        <p>卡布奇諾、馥列白、美式咖啡 75 折</p>
+                    </div>
+                </div>
+
+                <!-- 卡片 2 -->
+                <div class="news-item polaroid">
+                    <div class="polaroid-inner">
+                        <img src="../img/news/news-b.jpg" alt="年末獻禮">
+                        <h5>溫情年末獻禮</h5>
+                        <p>單筆消費滿 1000 元，即享 100 元回饋券</p>
+                    </div>
+                </div>
+
+                <!-- 卡片 3 -->
+                <div class="news-item polaroid">
+                    <div class="polaroid-inner">
+                        <img src="../img/news/news-c.jpg" alt="年末抽獎">
+                        <h5>感謝這一年的相遇｜年末抽獎</h5>
+                        <p>最高獎品價值 3000 元</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 單一分類區塊：期間限定 -->
+        <section class="news-section" data-category="limit">
+            <h2>Limited Menu</h2>
+            <p class="desc">以當季食材與巧思研製期間限定品項，從風味到口感皆展現季節獨有的溫度與魅力，是只有現在才能品嚐的專屬滋味。</p>
+
+            <div class="news-grid">
+
+                <!-- 卡片 1 -->
+                <div class="news-item polaroid">
+                    <div class="polaroid-inner">
+                        <img src="../img/news/coffee-cherry mocha.jpg" alt="櫻桃摩卡">
+                        <h5>冬日限定系列｜櫻桃摩卡</h5>
+                        <p>櫻桃香氣在冬日綻放，櫻桃摩卡溫暖登場</p>
+                    </div>
+                </div>
+
+                <!-- 卡片 2 -->
+                <div class="news-item polaroid">
+                    <div class="polaroid-inner">
+                        <img src="../img/news/drink-grape-cut.jpg" alt="暮紫葡萄綻香">
+                        <h5>冬日限定系列｜暮紫葡萄綻香</h5>
+                        <p>葡萄韻味輕柔散開，暮紫葡萄綻香優雅上市</p>
+                    </div>
+                </div>
+
+                <!-- 卡片 3 -->
+                <div class="news-item polaroid">
+                    <div class="polaroid-inner">
+                        <img src="../img/news/dessert-wine cake.jpg" alt="絲絨巧克力乳酪蛋糕">
+                        <h5>冬日限定系列｜絲絨巧克力乳酪蛋糕</h5>
+                        <p>送上幸福，絲絨巧克力乳酪蛋糕期間登場</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 單一分類區塊：媒體報導 -->
+        <section class="news-section" data-category="media">
+            <h2>Media Features</h2>
+            <p class="desc">以真誠手沖與細膩風味獲得多家媒體推薦，從品牌故事到店內氛圍，記錄我們一路走來的暖心足跡。</p>
+
+            <div class="news-grid">
+
+                <!-- 卡片 1 -->
+                <div class="news-item polaroid">
+                    <div class="polaroid-inner">
+                        <img src="../img/news/media-a.jpg" alt="咖啡誌專欄">
+                        <h5>《咖啡誌》專欄｜</h5>
+                        <p>開業僅兩年，Brew & Belle Café 迅速受到矚目</p>
+                    </div>
+                </div>
+
+                <!-- 卡片 2 -->
+                <div class="news-item polaroid">
+                    <div class="polaroid-inner">
+                        <img src="../img/news/media-b.jpg" alt="聯名企劃">
+                        <h5>聯名企劃｜Brew & Belle Café × 懶懶貓</h5>
+                        <p>限定杯袋與保溫杯，想帶回家的甜美日常</p>
+                    </div>
+                </div>
+
+                <!-- 卡片 3 -->
+                <div class="news-item polaroid">
+                    <div class="polaroid-inner">
+                        <img src="../img/news/media-c.jpg" alt="ELLE專欄">
+                        <h5>《ELLE》專欄｜網紅爭相打卡的人氣據點</h5>
+                        <p>走進 Brew & Belle Café 的日常與溫暖訪談</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </section>
+
+    <!-- ===== 回到分類按鈕列 按鈕 ===== -->
+    <div class="back-to-top">
+        <button onclick="scrollToNewsTop()">Top ⭡</button>
+    </div>
+
+    <!-- 頁尾區塊 -->
+    <footer class="footer">
+
+
+
+        <!-- 頁尾的店名 -->
+        <div class="footer-content">
+            <img src="../img/logo-white.png">
+
+        </div>
+
+        <!-- 頁尾聯絡資訊 -->
+        <div class="footer-info">
+            <p>Line │ Brewbellecafe2023&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Tel │ 04-2280-5202&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                統編 │ 22805204&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                地址 │ 台中市北區咖啡一路 88 號
+            </p>
+        </div>
+
+        <div class="footer-copy">
+            © 2023 Brew & Belle Café. All rights reserved.
+        </div>
+
+    </footer>
+
+    <!-- JS連結 -->
+    <script src="../JS/news.js"></script>
+
+
+</body>

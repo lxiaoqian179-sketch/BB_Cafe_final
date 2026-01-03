@@ -1,0 +1,556 @@
+/* ============ 全域設定 ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --sans: 'Noto Sans TC', sans-serif;
+    --serif: 'Noto Serif TC', serif;
+    --logo-font: 'Corinthia', cursive;
+    --gold: #c59d5f;
+}
+
+body {
+    font-family: var(--sans);
+    background: #fdfbf7;
+}
+
+
+/* ============ 導覽列 ============ */
+
+.navbar {
+    width: 100%;
+    padding: 5px 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-bottom: 5px solid var(--gold);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo img {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+    font-family: var(--serif);
+    /* 套用有襯線字體 */
+    color: #7e5c3f;
+}
+
+.nav-links a:hover {
+    color: #be9f5f;
+}
+
+
+/* ============ HERO 區 ============ */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 100dvh;
+    /* ⭐ 現代瀏覽器使用的動態 viewport 高度 */
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.hero-text {
+    position: absolute;
+    right: 0%;
+    bottom: 15%;
+    text-align: right;
+    color: white;
+    padding: 40px;
+    z-index: 1;
+}
+
+.hero-text h1 {
+    font-family: var(--logo-font);
+    font-size: 60px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.2;
+    text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.45);
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* ============ ABOUT main 區塊 ============ */
+
+/*About 整體設定*/
+.about {
+    width: 100%;
+    background: #f8f5ef;
+    padding-bottom: 0x;
+    overflow: hidden;
+}
+
+/* A、B區塊的通用設定 */
+.about-intro,
+.about-intro-two {
+    padding: 120px 0;
+    position: relative;
+}
+
+
+
+
+.about-intro {
+    background-image: url("../img/about/flowing-peach-fabric-beach.png");
+    background-size: cover;
+    /* 讓圖片自動裁切填滿區域 */
+    background-position: center;
+    /* 置中 */
+    background-repeat: no-repeat;
+    /* 不重複 */
+    padding: 120px 0;
+    /* 內距，讓內容與背景保持距離 */
+}
+
+.about-intro-two {
+    background-image: url("../img/about/about-pasta.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 0 80px;
+}
+
+/*內層排版 about-inner */
+.about-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+/*內層排版 about-inner-c */
+.about-inner-c {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 20px; */
+    position: relative;
+    z-index: 2;
+}
+
+/* 區塊 B 做左右反轉（排版變化） */
+.about-intro-two .about-inner {
+    flex-direction: row-reverse;
+    /* 主動交換左右位置 */
+    align-items: center;
+}
+
+
+/* 讓文字排在左邊、圖片排在右邊（保險寫法） */
+.about-intro-two .about-content {
+    order: 1;
+}
+
+.about-intro-two .image-group {
+    order: 2;
+}
+
+/* ===== 圖片群組：用於重疊定位 ===== */
+.image-group {
+    position: relative;
+    /* 讓圓形可以定位在它裡面 */
+    width: fit-content;
+}
+
+
+/* 長方形圖片 */
+.img-rect {
+    width: 400px;
+    border-radius: 30px;
+    display: block;
+}
+
+/* 圓形圖片（疊在左下角） */
+.img-circle {
+    width: 300px;
+    position: absolute;
+    left: -80px;
+    /* 往左推出去，形成重疊 */
+    bottom: -180px;
+    /* 往下突破 A 區塊 */
+    z-index: 3;
+}
+
+
+/*文字區塊設計 */
+.about-content {
+    flex: 1;
+    max-width: 520px;
+}
+
+.about-content h2 {
+    font-family: var(--logo-font);
+    font-size: 80px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+    margin-left: -60px;
+    /* 依視覺調整 -20px ~ -80px */
+}
+
+/* 點綴小標題 */
+.about-content h3 {
+    font-size: 22px;
+    line-height: 1.75;
+    color: #5e5145;
+    font-family: "Noto Serif TC", serif;
+    margin-bottom: 7px;
+    /* 段落間的行高 */
+    margin-left: -60px;
+    /* 依視覺調整 -20px ~ -80px */
+}
+
+.about-content p {
+    font-size: 18px;
+    line-height: 1.75;
+    color: #5e5145;
+    font-family: "Noto Serif TC", serif;
+    margin-bottom: 20px;
+    /* 段落間的行高 */
+}
+
+
+/*圖片區塊設計*/
+.about-images {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.img-front {
+    width: 500px;
+    border-radius: 18px;
+    object-fit: cover;
+    transition: 0.5s ease;
+    transform: translateY(12px);
+}
+
+.img-front-C {
+    width: 600px;
+    border-radius: 18px;
+    object-fit: cover;
+    transition: 0.5s ease;
+    transform: translateY(12px);
+    transform: translateX(250px);
+
+}
+
+.about-intro:nth-of-type(3) .about-inner {
+    gap: 20px;
+}
+
+
+
+/* ============ Footer ============ */
+.footer {
+    background: #766349;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 70px 50px 50px;
+    /* margin-top: 80px; */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.footer-content img{
+    width: 300px;
+}
+
+
+
+.footer-info p {
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+.footer-copy {
+    margin-top: 20px;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   RWD：平板（Tablet）
+   ========================================================= */
+@media (max-width: 1024px) {
+
+    /* 外框縮排 */
+    .about-inner,
+    .about-inner-c {
+        padding: 0 20px;
+        gap: 40px;
+    }
+
+    /* 文字區塊縮小 */
+    .about-content h2 {
+        font-size: 60px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .about-content h3 {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .about-content p {
+        font-size: 16px;
+    }
+
+    /* 圖片區塊縮小 */
+    .img-front,
+    .img-front-C {
+        width: 380px;
+        transform: none;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .image-group .img-rect {
+        width: 300px;
+    }
+
+    .image-group .img-circle {
+        width: 200px;
+        left: -40px;
+        bottom: -120px;
+    }
+}
+
+
+/* =========================================================
+   RWD：手機（Mobile）
+   ========================================================= */
+@media (max-width: 768px) {
+
+    /* 導覽列縮小 */
+    .navbar {
+        padding: 10px 20px;
+    }
+    .logo img {
+        width: 160px;
+    }
+
+    /* HERO 標題縮小置中 */
+    .hero-text {
+        right: 50%;
+        transform: translateX(50%);
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+        line-height: 1.4;
+    }
+
+    /* About 區塊：改成直向版 */
+    .about-inner,
+    .about-inner-c,
+    .about-intro-two .about-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .about-content {
+        max-width: 100%;
+    }
+
+    .about-content h2,
+    .about-content h3 {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .about-content p {
+        font-size: 16px;
+    }
+
+    /* 圖片改為 100% 寬度 */
+    .about-images {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .img-front,
+    .img-front-C {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+        transform: none;
+    }
+
+    /* B 區塊圖片群組 */
+    .image-group {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    .image-group .img-rect {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .image-group .img-circle {
+        width: 180px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -100px;
+    }
+
+    /* 區塊上下留白縮小 */
+    .about-intro,
+    .about-intro-two {
+        padding: 60px 0;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 40px 20px;
+    }
+
+    .footer-content img {
+        width: 200px;
+    }
+
+    .footer-info p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+}
+
+/* ===================== 手機版：漢堡選單 ===================== */
+
+/* 漢堡按鈕預設隱藏（桌機不顯示） */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: #7e5c3f;
+    border-radius: 3px;
+    transition: 0.4s;
+}
+
+/* 轉換成 X 的動畫 */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ===================== 手機版選單 ===================== */
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: white;
+    list-style: none;
+    padding: 80px 30px;
+    transition: 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    z-index: 1500;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+}
+
+/* 展開 */
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #7e5c3f;
+    font-family: var(--serif);
+}
+
+/* ===================== RWD：768px 以下啟動 ===================== */
+@media (max-width: 768px) {
+
+    /* 桌機版選單隱藏 */
+    .nav-links {
+        display: none;
+    }
+
+    /* 漢堡按鈕顯示 */
+    .hamburger {
+        display: flex;
+    }
+}
+

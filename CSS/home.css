@@ -1,0 +1,1010 @@
+/* ============ 全域設定 ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --sans: 'Noto Sans TC', sans-serif;
+    --serif: 'Noto Serif TC', serif;
+    --logo-font: 'Corinthia', cursive;
+    --gold: #c59d5f;
+}
+
+body {
+    font-family: var(--sans);
+    background: #fdfbf7;
+}
+
+/* 全頁避免水平爆版 */
+html,
+body {
+    overflow-x: hidden;
+}
+
+/* ============ 導覽列 ============ */
+
+.navbar {
+    width: 100%;
+    padding: 5px 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-bottom: 5px solid var(--gold);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+
+body {
+    padding-top: 100px;
+    /* 依你的 navbar 實際高度調整 */
+}
+
+.logo img {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+    font-family: var(--serif);
+    /* 套用有襯線字體 */
+    color: #7e5c3f;
+}
+
+.nav-links a:hover {
+    color: #be9f5f;
+}
+
+
+
+/* ============ HERO 區 ============ */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 100dvh;
+    /* ⭐ 現代瀏覽器使用的動態 viewport 高度 */
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.hero-text {
+    position: absolute;
+    right: 0%;
+    bottom: 15%;
+    text-align: right;
+    color: white;
+    padding: 40px;
+    z-index: 1;
+}
+
+.hero-text h1 {
+    font-family: var(--logo-font);
+    font-size: 60px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.2;
+    text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.45);
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* 標題淡入動畫 */
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+
+.home-main {
+    background-image: url("../img/about/flowing-peach-fabric-beach.png");
+    /* 圖片路徑 */
+    background-size: cover;
+    /* 讓圖片自動裁切填滿區塊 */
+    background-position: center;
+    /* 置中 */
+    background-repeat: no-repeat;
+    /* 不重複 */
+
+}
+
+
+/* -------------Popular人氣商品區塊--------------- */
+/* 單一分類區塊 */
+.popular-section {
+
+    text-align: center;
+    padding: 0 140px;
+    /* ⭐ 左右大留白 */
+}
+
+
+/* 分類標題 */
+.popular-section h2 {
+    font-family: var(--logo-font);
+    font-size: 80px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+
+
+/* 敘述文字 */
+.popular-section .desc {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.9;
+    letter-spacing: 0.5px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+
+/* 卡片區域 */
+.popular-grid {
+    display: flex;
+    gap: 40px;
+    /* ⭐ 上下 40px / 左右 20px 的間距 */
+    justify-content: center;
+    /* ⭐ 讓整個三欄水平置中 */
+    margin-top: 50px;
+
+}
+
+/* ========== 整個卡片（拍立得外框） ========== */
+.popular-item {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 18px 18px 40px;
+    /* 下方加厚製造拍立得感 */
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 340px;
+    /* 可以依需求調整 */
+}
+
+.img-box {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+
+
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+
+
+
+.popular-item h4 {
+    font-family: var(--logo-font);
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-top: 18px;
+    font-size: 70px;
+
+}
+
+.popular-item h5 {
+    /* font-style: italic; */
+    margin-top: 8px;
+    font-size: 20px;
+    font-family: "Noto Serif TC", serif;
+    letter-spacing: 1px;
+}
+
+
+.popular-item p {
+    color: #766349;
+    margin-top: 2px;
+    font-size: 16px;
+    font-family: "Noto Serif TC", serif;
+}
+
+
+/* ============ ABOUT 區塊 ============ */
+.about {
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 60px;
+    gap: 40px;
+    background-image: "";
+    padding-bottom: 60px;
+    /* div 變高，下方空間會包含背景 */
+}
+
+.about-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+
+}
+
+
+.about-text {
+    flex: 1;
+    max-width: 700px;
+    margin-left: 80px;
+
+}
+
+.about-text.animate {
+    animation: slideLeftIn 1.2s ease forwards;
+}
+
+
+/* 動畫效果，從左邊滑入 */
+@keyframes slideLeftIn {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.about-text h2 {
+    font-family: var(--logo-font);
+    font-size: 80px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.9;
+    letter-spacing: 0.5px;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+
+.about-btn {
+    display: inline-block;
+    padding: 12px;
+    border: 2px solid #bea162;
+    border-radius: 50px;
+    /* ⭐超圓角 = 膠囊效果 */
+    background: #d7d1d1;
+
+    font-family: "Noto Serif TC", serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    /* 文字間距微調 */
+    color: #333;
+
+    text-decoration: none;
+    text-align: center;
+
+    display: flex;
+    /* 讓文字完美置中 */
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.6s ease;
+    /* hover 動畫 */
+}
+
+/* ABOUT 圖片區 */
+.about-images {
+    padding: 60px;
+    position: relative;
+    width: 35%;
+    margin-top: 165px;
+    margin-left: 70px;
+    min-width: 380px;
+    /* 不要太小 */
+
+}
+
+/* 動畫效果，從下方滑入 */
+.about-images.animate {
+    animation: slideInBottom 3s ease forwards;
+}
+
+/* 關鍵影格 */
+@keyframes slideInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+.about-images img {
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+
+
+/* 前景主圖 */
+.img-front {
+    position: relative;
+    z-index: 2;
+    width: 70%;
+    /* 主圖較小 */
+    margin: -100px auto 0 auto;
+    /* 水平置中，不往左右溢出 */
+    margin-top: -100px;
+
+    display: block;
+    border-radius: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+.about-menu {
+    background-image: url("../img/home/pexels-n-voitkevich-5792328-c.jpg");
+    background-size: cover;
+    /* 讓圖片自動裁切填滿區域 */
+    background-position: center;
+    /* 置中 */
+    background-repeat: no-repeat;
+    /* 不重複 */
+    padding-bottom: 50px;
+}
+
+/* ----------------Menu產品分類輪播圖----------------------- */
+/* 圓角卡片 + 上下錯落 + 排版 + 按鈕樣式 */
+/* 外層 */
+.menu-slider {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+    /* 允許突破 */
+    padding: 0;
+
+}
+
+/* 滾動軌道 */
+.slider-track {
+    display: flex;
+    /* overflow: hidden; */
+    gap: 40px;
+    transition: transform 0.6s ease;
+}
+
+/* 卡片樣式 */
+.card {
+    width: 300px;
+    background: #ffffff;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    flex-shrink: 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+
+}
+
+/* 上下錯落高度 */
+.card.tall {
+    margin-top: 0px;
+}
+
+.card.short {
+    margin-top: 60px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 18px 18px 0 0;
+}
+
+.card p {
+    font-family: "Noto Serif TC", serif;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+
+
+
+/* hover 效果 */
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 左右箭頭 */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffffffcc;
+    border: 1px solid #aaa;
+    padding: 12px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    backdrop-filter: blur(4px);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.slider-btn:hover {
+    background: #fff;
+}
+
+
+/* 查看所有品項的按鈕 */
+
+/* 查看所有品項按鈕容器 → 負責置中 */
+.menu-view-all {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* 按鈕樣式（比照你的 MAP 按鈕） */
+.view-all-btn {
+    display: inline-block;
+    padding: 14px 160px;
+    background: #f2e5c7;
+    border: 1.5px solid #b89c4e;
+    border-radius: 40px;
+    /* ⭐圓角強度，可再調整 */
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #333;
+    text-decoration: none;
+    transition: 0.25s ease;
+    font-family: "Noto Serif TC", serif;
+}
+
+/* Hover 效果（可按需求調整） */
+.view-all-btn:hover {
+    background: #e3e3e3;
+    transform: translateY(-2px);
+}
+
+
+
+
+/* ============ News 區塊 ============ */
+
+/*news 整體設定*/
+.news {
+    padding: 120px 0;
+    /* 內距，讓內容與背景保持距離 */
+}
+
+
+/*內層排版 */
+.news-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 20px; */
+    position: relative;
+    z-index: 2;
+}
+
+/*文字區塊設計 */
+.news-content {
+    flex: 1;
+    max-width: 520px;
+}
+
+.news-content h2 {
+    font-family: var(--logo-font);
+    font-size: 80px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+    margin-left: -60px;
+    /* 依視覺調整 -20px ~ -80px */
+}
+
+.news-content p {
+    font-size: 18px;
+    line-height: 1.75;
+    color: #5e5145;
+    font-family: "Noto Serif TC", serif;
+    margin-bottom: 20px;
+    /* 段落間的行高 */
+}
+
+
+/*圖片區塊設計*/
+.news-images {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+}
+
+.news-front {
+    width: 650px;
+    border-radius: 18px;
+    object-fit: cover;
+    transition: 0.5s ease;
+    transform: translateY(12px);
+    transform: translateX(-230px);
+
+}
+
+
+/*最新消息 圖文位置做左右反轉（排版變化） */
+.news .news-inner {
+    flex-direction: row-reverse;
+    /* 主動交換左右位置 */
+    align-items: center;
+}
+
+
+/* 最新消息 超連結按鈕 */
+
+/* 外層讓按鈕置中 */
+.news-all {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Read More 按鈕樣式（同 MAP 按鈕） */
+.news-all-btn {
+    display: inline-block;
+    padding: 12px 160px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    /* 文字間距微調 */
+    font-family: "Noto Serif TC", serif;
+    color: #333;
+    text-decoration: none;
+    border: 2px solid #333;
+    border-radius: 50px;
+    /* 長圓 pill 造型 */
+    background-color: transparent;
+    transition: 0.3s ease;
+}
+
+/* hover 效果 */
+.news-all-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+
+
+/* ============ 聯絡我們 區塊 ============ */
+.contact {
+    position: relative;
+    width: 100%;
+    padding: 100px;
+    /* 與上方區塊拉開距離 */
+    overflow: hidden;
+
+}
+
+.contact-video {
+    aspect-ratio: 21 / 9;
+    width: 80%;
+    /* 左右留白：影片寬度縮小 */
+    max-width: 1500px;
+    /* 避免超大顯示器影片太寬 */
+    display: block;
+    margin: 0 auto;
+    /* ⭐ 影片左右置中 */
+    object-fit: cover;
+    border-radius: 20px;
+    opacity: 90%;
+}
+
+.contact-text {
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    text-align: left;
+    color: white;
+    padding: 40px;
+    z-index: 1;
+}
+
+.contact-text h1 {
+    font-size: 90px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-family: var(--logo-font);
+    margin: 0;
+    line-height: 1.2;
+    text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.45);
+}
+
+.contact-text p {
+    margin-left: 100px;
+    margin-top: 10px;
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 3;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+
+}
+
+/* 聯絡我們的按鈕 */
+
+/* 按鈕容器 → 負責置中 */
+.contact-view-all {
+    width: 100%;
+    /* ⭐ 確保占滿整行 */
+    text-align: center;
+    /* ⭐ 置中用 */
+    margin-top: 40px;
+    /* 可調整 */
+}
+
+/* 按鈕樣式（比照你的 MAP 按鈕） */
+.contact-all-btn {
+    display: inline-block;
+    padding: 14px 160px;
+    background: #f2e5c7;
+    border: 1.5px solid #b89c4e;
+    border-radius: 40px;
+    /* ⭐圓角強度，可再調整 */
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #333;
+    text-decoration: none;
+    transition: 0.25s ease;
+    font-family: "Noto Serif TC", serif;
+}
+
+/* Hover 效果（可按需求調整） */
+.contact-all-btn:hover {
+    background: #e3e3e3;
+    transform: translateY(-2px);
+}
+
+
+
+/* ============ 回到頂端產品選擇列的按鈕 ============ */
+
+#popularTop {
+    scroll-margin-top: 120px;
+    /* 依你的 navbar 高度調整 */
+}
+
+
+.back-to-top {
+    position: fixed;
+    /* 固定位置 */
+    bottom: 30px;
+    /* 距離底部 30px */
+    right: 30px;
+    /* 距離右側 30px */
+    z-index: 999;
+    /* 確保浮在內容上面 */
+    opacity: 0;
+    /* 預設隱藏 */
+    pointer-events: none;
+    /* 無法點擊 */
+    transition: opacity 0.4s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    /* 顯示 */
+    pointer-events: auto;
+    /* 可點擊 */
+}
+
+.back-to-top button {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    /* 圓形 */
+    background-color: rgba(207, 162, 78, 0.5);
+    /* 金色 + 50%透明度 */
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+
+    backdrop-filter: blur(2px);
+    /* 玻璃感，可選 */
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.back-to-top button:hover {
+    background-color: rgba(207, 162, 78, 0.8);
+    /* 滑過變清晰 */
+    transform: translateY(-3px);
+}
+
+
+
+/* ============ Footer ============ */
+.footer {
+    background: #766349;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 70px 50px 50px;
+
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.footer-content img {
+    width: 300px;
+}
+
+
+.footer-info p {
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+.footer-copy {
+    margin-top: 20px;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+
+/* ==================== 手機漢堡按鈕 ==================== */
+
+.hamburger {
+    display: none; /* 桌機版不顯示 */
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+.hamburger span {
+    width: 32px;
+    height: 3px;
+    background: #7e5c3f;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+
+/* 變成 X 的動畫 */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ==================== 手機版滑出選單 ==================== */
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;  /* 隱藏在右側外 */
+    width: 70%;
+    height: 100vh;
+    background: white;
+    padding: 100px 30px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: 0.45s ease;
+    z-index: 2000;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: #7e5c3f;
+    font-size: 20px;
+    font-family: var(--serif);
+}
+
+
+/* ==================== RWD：手機版啟動 ==================== */
+
+@media (max-width: 768px) {
+
+    /* 導覽列左右留白縮小 */
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    /* Logo縮小 */
+    .logo img {
+        width: 180px;
+    }
+
+    /* 桌機選單隱藏 */
+    .nav-links {
+        display: none;
+    }
+
+    /* 漢堡按鈕顯示 */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hero 文字縮小 */
+    .hero-text h1 {
+        font-size: 38px;
+    }
+
+    /* ----- Popular 區塊 ----- */
+    .popular-section {
+        padding: 0 40px;
+    }
+
+    .popular-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .popular-item {
+        width: 90%;
+    }
+
+    /* ----- About 區塊 ----- */
+    .about-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        margin-left: 0;
+    }
+
+    .about-images {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .img-front {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    /* ----- Menu Slider 區塊 ----- */
+    .slider-track {
+        overflow-x: auto;
+        padding-bottom: 20px;
+    }
+
+    .slider-btn {
+        display: none;
+    }
+
+    .card {
+        margin-top: 20px;
+    }
+
+    /* ----- News 區塊 ----- */
+    .news-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .news-content h2 {
+        margin-left: 0;
+    }
+
+    .news-front {
+        transform: none;
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    /* ----- Contact 區塊 ----- */
+    .contact {
+        padding: 40px 20px;
+    }
+
+    .contact-video {
+        width: 100%;
+    }
+
+    .contact-text {
+        position: static;
+        text-align: center;
+        padding: 0;
+        margin-top: -40px;
+    }
+
+    .contact-text h1 {
+        font-size: 48px;
+    }
+
+    .contact-text p {
+        margin-left: 0;
+    }
+}

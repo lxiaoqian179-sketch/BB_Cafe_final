@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew & Belle Café</title>
+    <link rel="stylesheet" href="../CSS/menu.css">
+    <!-- 手寫英文字體連結 -->
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- 關於品牌:中文內文-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <!-- 導覽列 -->
+    <header class="navbar">
+
+        <!-- 左上角logo -->
+        <div class="logo">
+            <a href="../html/home.html">
+                <img src="../img/logo-horizontal-06.png" alt="Brew & Belle Café Logo">
+            </a>
+        </div>
+
+        <!-- 桌機版選單 -->
+        <nav aria-label="主選單" class="desktop-nav">
+            <ul class="nav-links">
+                <li><a href="../html/about.html">Story</a></li>
+                <li><a href="../html/menu.html">Menu</a></li>
+                <li><a href="../html/news.html">News</a></li>
+                <li><a href="../html/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- 漢堡按鈕（手機版顯示） -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </header>
+
+    <!-- 手機版滑出選單（header 外）-->
+    <ul class="mobile-menu">
+        <li><a href="../html/about.html">Story</a></li>
+        <li><a href="../html/menu.html">Menu</a></li>
+        <li><a href="../html/news.html">News</a></li>
+        <li><a href="../html/contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Hero 菜單大圖區 -->
+    <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="../video/menu-hero.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-text">
+            <h1>Menu<br>Every sip is crafted with care.</h1>
+
+            <!-- <a href="#" class="btn">查看菜單</a> -->
+        </div>
+    </section>
+
+
+
+    <!------------------------- menu區塊---------------------------->
+
+    <section id="menu-all" class="menu-page">
+        <!------------ menu分類按鈕列----------->
+        <div id="menuTop" class="menu-tabs">
+            <div class="tab-row">
+                <button data-target="all" class="active">―所有品項 All―</button>
+                <button data-target="coffee">―精選咖啡 Coffee―</button>
+                <button data-target="drinks">―果汁與茶飲 Juice & Tea―</button>
+                <button data-target="pasta">―義大利麵與燉飯 Pasta & Risotto―</button>
+            </div>
+
+            <div class="tab-row">
+
+                <button data-target="pizza">―手工披薩 Pizza―</button>
+                <button data-target="dessert">―甜點 Dessert―</button>
+                <button data-target="fries">―佐味小點 Savory Bites―</button>
+            </div>
+
+        </div>
+
+        <!-- ================= 所有分類（用於 ALL 顯示） ================ -->
+
+        <!-- 單一分類區塊：咖啡 -->
+        <section id="menu-coffee" class="menu-section" data-category="coffee">
+            <h2>Coffee</h2>
+            <p class="desc">以精選咖啡豆沖煮，呈現濃郁香氣與細緻口感。</p>
+
+            <div class="menu-grid">
+                <!-- 第一列 -->
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/coffee/coffee-americano.jpg" alt="咖啡"></div>
+                    <h5>美式咖啡</h5>
+                    <p>Americano</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/coffee/coffee-espresso.jpg" alt="咖啡"></div>
+                    <h5>濃縮咖啡</h5>
+                    <p>Espresso</p>
+
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/coffee/coffee-cappuccino.jpg" alt="咖啡"></div>
+                    <h5>卡布奇諾</h5>
+                    <p>Cappuccino</p>
+
+
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/coffee/coffee-mocha.jpg" alt="咖啡"></div>
+                    <h5>摩卡</h5>
+                    <p>Mocha</p>
+                </div>
+
+                <!-- 第二列 -->
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/coffee/coffee-latte.jpg" alt="咖啡"></div>
+                    <h5>拿鐵</h5>
+                    <p>Latte</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/coffee/coffee-flat white.jpg" alt="咖啡"></div>
+                    <h5>馥列白</h5>
+                    <p>Flat White</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/coffee/coffee-affogato.jpg" alt="咖啡"></div>
+                    <h5>阿芙佳朵</h5>
+                    <p>Affogato</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/coffee/coffee-caramel macchiato.jpg" alt="咖啡"></div>
+                    <h5>焦糖瑪奇朵</h5>
+                    <p>Caramel Macchiato</p>
+                </div>
+
+                <!-- 第三列 -->
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/coffee/coffee-cocoa macchiato.jpg" alt="咖啡"></div>
+                    <h5>冰可可瑪奇朵</h5>
+                    <p>Iced Cocoa Macchiato</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/coffee/coffee-cherry mocha.jpg" alt="咖啡"></div>
+                    <h5>櫻桃摩卡</h5>
+                    <p>Cherry Mocha</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/coffee/coffee-espresso-macchiato.jpg" alt="咖啡"></div>
+                    <h5>濃縮咖啡瑪奇朵</h5>
+                    <p>Espresso Macchiato</p>
+
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/coffee/coffee-iced peppermint mocha.jpg" alt="咖啡"></div>
+                    <h5>冰薄荷風味摩卡</h5>
+                    <p>Iced Peppermint Mocha</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 茶飲 Drinks -->
+        <section id="menu-drinks" class="menu-section" data-category="drinks">
+            <h2>Juice & Tea</h2>
+            <p class="desc">在果實的酸甜與茶葉的淡雅之間，找回最純粹的日常沁涼。</p>
+            <div class="menu-grid">
+                <!-- 第一列 -->
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/drink/drink-grape.jpg" alt="咖啡"></div>
+                    <h5>暮紫葡萄綻香</h5>
+                    <p>Twilight Grape Bloom</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/drink/drink-fruit-tea.jpg" alt="咖啡"></div>
+                    <h5>南風果語茶</h5>
+                    <p>Tropical Breeze Fruit Tea</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/drink/drink-milk-oolong-tea.jpg" alt="咖啡"></div>
+                    <h5>雲頂奶霜烏龍</h5>
+                    <p>Cream Cap Oolong Tea</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/drink/drink-matcha.jpg" alt="咖啡"></div>
+                    <h5>初雪相思抹茶</h5>
+                    <p>Matcha Latte with red Red Beans</p>
+                </div>
+
+                <!-- 第二列 -->
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/drink/drink-lemon-bt.jpg" alt="咖啡"></div>
+                    <h5>晨光檸檬紅茶</h5>
+                    <p>Sunrise Lemon Black Tea</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/drink/drink-strawberry.jpg" alt="咖啡"></div>
+                    <h5>莓語雲霜冰沙</h5>
+                    <p>Strawberry Cloud Smoothie</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/drink/drink-chocolate.jpg" alt="咖啡"></div>
+                    <h5>可可雲極冰沙</h5>
+                    <p>Cocoa Frost Blend</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/drink/drink-bt-milk.jpg" alt="咖啡"></div>
+                    <h5>白玉紅茶歐蕾</h5>
+                    <p>Black Tea Latte with White Pearls</p>
+                </div>
+
+
+            </div>
+
+
+
+        </section>
+
+
+        <!-- 主食套餐 -->
+        <section id="menu-pasta" class="menu-section" data-category="pasta">
+            <h2>Pasta & Risotto</h2>
+            <p class="desc">以義式手法詮釋從清爽到濃郁的完整風味。</p>
+            <div class="menu-grid">
+                <!-- 第一列 -->
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/pasta/pasta-clams.jpg" alt="咖啡"></div>
+                    <h5>白酒蛤蜊蒜香義大利麵</h5>
+                    <p>White Wine Vongole Pasta</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/pasta/pasta-zucchini.jpg" alt="咖啡"></div>
+                    <h5>香蒜橄欖油櫛瓜小番茄義大利麵</h5>
+                    <p>Zucchini & Cherry Tomato Aglio e Olio</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/pasta/pasta-truffle.jpg" alt="咖啡"></div>
+                    <h5>松露野菇奶油義大利麵</h5>
+                    <p>Truffle Cream & Wild Mushroom Pasta</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/pasta/pasta-salmon.jpg" alt="咖啡"></div>
+                    <h5>香檸奶油鮭魚義大利麵</h5>
+                    <p>Lemon Cream Salmon Pasta</p>
+                </div>
+
+                <!-- 第二列 -->
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/pasta/pasta-bacon.jpg" alt="咖啡"></div>
+                    <h5>奶油南瓜培根義大利麵</h5>
+                    <p>Pumpkin Cream & Bacon Pasta</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/pasta/pasta-cuttlefish.jpg" alt="咖啡"></div>
+                    <h5>墨魚醬香辣海鮮燉飯</h5>
+                    <p>Spicy Squid Ink Seafood Risotto</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/pasta/pasta-greensauce.jpg" alt="咖啡"></div>
+                    <h5>羅勒青醬雞胸肉燉飯</h5>
+                    <p>Green Basil & Tender Chicken Risotto</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/pasta/pasta-scallops.jpg" alt="咖啡"></div>
+                    <h5>海鹽干貝奶油燉飯</h5>
+                    <p>Sea Salt Scallop Cream Risotto</p>
+                </div>
+
+
+            </div>
+
+
+
+        </section>
+
+        <!-- 披薩 pizza -->
+        <section id="menu-pizza" class="menu-section" data-category="pizza">
+            <h2>Pizza</h2>
+            <p class="desc">以手工薄底與新鮮食材，堆疊多層次迷人風味，</p>
+            <div class="menu-grid">
+                <!-- 第一列 -->
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/pizza/pizza-arugula.jpg" alt="咖啡"></div>
+                    <h5>義式帕瑪火腿芝麻葉披薩</h5>
+                    <p>Prosciutto & Arugula Pizza</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/pizza/pizza-seafood.jpg" alt="咖啡"></div>
+                    <h5>法式海鮮饗宴披薩</h5>
+                    <p>French-Style Seafood Pizza</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/pizza/pizza-truffle.jpg" alt="咖啡"></div>
+                    <h5>松露野菇白醬披薩</h5>
+                    <p>Truffle & Wild Mushroom Bianca</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/pizza/pizza-margherita.jpg" alt="咖啡"></div>
+                    <h5>瑪格莉特披薩</h5>
+                    <p>Margherita Pizza</p>
+                </div>
+
+                <!-- 第二列 -->
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/pizza/pizza-mushrooms.jpg" alt="咖啡"></div>
+                    <h5>青醬雞肉蘑菇披薩</h5>
+                    <p>Pesto Chicken & Mushroom Pizza</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/pizza/pizza-strawberry.jpg" alt="咖啡"></div>
+                    <h5>草莓香緹甜披薩</h5>
+                    <p>Strawberry Mascarpone Chantilly Pizza</p>
+
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/pizza/pizza-apple.jpg" alt="咖啡"></div>
+                    <h5>焦糖蘋果肉桂甜披薩</h5>
+                    <p>Caramel Apple Cinnamon Pizza</p>
+                </div>
+
+
+            </div>
+
+
+
+        </section>
+
+        <!-- 甜點 dessert -->
+        <section id="menu-dessert" class="menu-section" data-category="dessert">
+            <h2>Dessert</h2>
+            <p class="desc">希望為您的午後時光，增添一份甜美的幸福。</p>
+            <div class="menu-grid">
+                <!-- 第一列 -->
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/dessert/dessert-brownie.jpg" alt="咖啡"></div>
+                    <h5>覆盆子黑巧克力布朗尼</h5>
+                    <p>Raspberry Dark Chocolate Brownie</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/dessert/dessert-icecream-strawbeey.jpg" alt="咖啡"></div>
+                    <h5>鮮草莓香緹佐香草冰淇淋</h5>
+                    <p>Strawberry Chantilly with Ice Cream</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/dessert/dessert-mango.jpg" alt="咖啡"></div>
+                    <h5>芒果草莓香緹聖代</h5>
+                    <p>Mango & Strawberry Chantilly Sundae</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/dessert/dessert-muffin.jpg" alt="咖啡"></div>
+                    <h5>蜂蜜綜合莓果鬆餅</h5>
+                    <p>Honey Berry Waffle</p>
+                </div>
+
+                <!-- 第二列 -->
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/dessert/dessert-pudding.jpg" alt="咖啡"></div>
+                    <h5>黑糖布丁佐季節水果</h5>
+                    <p>Brown Sugar Caramel with Fruits</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/dessert/dessert-raspberry.jpg" alt="咖啡"></div>
+                    <h5>覆盆子藍莓香緹塔</h5>
+                    <p>Raspberry & Blueberry Chantilly Tart</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/dessert/dessert-strawberry.jpg" alt="咖啡"></div>
+                    <h5>鮮草莓香緹派</h5>
+                    <p>Fresh Strawberry Chantilly Pie</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/dessert/dessert-wine cake.jpg" alt="咖啡"></div>
+                    <h5>絲絨巧克力乳酪蛋糕</h5>
+                    <p>Velvet Chocolate Cheesecake</p>
+                </div>
+
+
+            </div>
+
+
+
+        </section>
+
+        <!-- 小點心 fries -->
+        <section id="menu-fries" class="menu-section" data-category="fries">
+            <h2>Savory Bites</h2>
+            <p class="desc">能輕鬆搭配咖啡、又能填滿小小飢餓的美味選擇。</p>
+            <div class="menu-grid">
+                <!-- 第一列 -->
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/fries/fries-borscht.jpg" alt="咖啡"></div>
+                    <h5>經典歐風番茄牛肉湯</h5>
+                    <p>Classic European Beef & Tomato Soup</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/fries/fries-bread.jpg" alt="咖啡"></div>
+                    <h5>歐風慢酵核桃麵包</h5>
+                    <p>European Slow-Fermented Walnut Bread</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/fries/fries-chicken.jpg" alt="咖啡"></div>
+                    <h5>普羅旺斯香草烤雞腿</h5>
+                    <p>Provençal Herb Roasted Chicken Leg</p>
+                </div>
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/fries/fries-fries.jpg" alt="咖啡"></div>
+                    <h5>黃金香酥薯條</h5>
+                    <p>Golden Crispy Fries</p>
+                </div>
+
+                <!-- 第二列 -->
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/fries/fries-salad.jpg" alt="咖啡"></div>
+                    <h5>季節鮮蔬沙拉</h5>
+                    <p>Seasonal Garden Salad</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="img-box"><img src="../img/menu/fries/fries-soup.jpg" alt="咖啡"></div>
+                    <h5>南瓜奶油濃湯</h5>
+                    <p>Roasted Pumpkin Soup</p>
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </section>
+
+    <!-- ===== 回到分類按鈕列 按鈕 ===== -->
+    <div class="back-to-top">
+        <button onclick="scrollToMenuTop()">Top ⭡</button>
+    </div>
+
+
+
+
+
+    <!-- 頁尾區塊 -->
+    <footer class="footer">
+
+
+
+        <!-- 頁尾的店名 -->
+        <div class="footer-content">
+            <img src="../img/logo-white.png">
+
+        </div>
+
+        <!-- 頁尾聯絡資訊 -->
+        <div class="footer-info">
+            <p>Line │ Brewbellecafe2023&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Tel │ 04-2280-5202&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                統編 │ 22805204&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                地址 │ 台中市北區咖啡一路 88 號
+            </p>
+        </div>
+
+        <div class="footer-copy">
+            © 2023 Brew & Belle Café. All rights reserved.
+        </div>
+
+        </div>
+
+    </footer>
+
+    <!-- JS連結 -->
+    <script src="../JS/menu.js"></script>
+</body>
