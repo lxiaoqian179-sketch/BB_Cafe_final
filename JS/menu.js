@@ -54,6 +54,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     observer.observe(menuPage);
 
+    const americanoCard = document.getElementById("americano-card");
+    const americanoModal = document.getElementById("americano-modal");
+    const americanoOverlay = document.getElementById("americano-modal-overlay");
+    const americanoClose = americanoModal.querySelector(".modal-close");
+
+    const openAmericanoModal = () => {
+        americanoModal.classList.add("active");
+        americanoModal.setAttribute("aria-hidden", "false");
+    };
+
+    const closeAmericanoModal = () => {
+        americanoModal.classList.remove("active");
+        americanoModal.setAttribute("aria-hidden", "true");
+    };
+
+    if (americanoCard) {
+        americanoCard.addEventListener("click", openAmericanoModal);
+    }
+
+    americanoOverlay.addEventListener("click", closeAmericanoModal);
+    americanoClose.addEventListener("click", closeAmericanoModal);
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && americanoModal.classList.contains("active")) {
+            closeAmericanoModal();
+        }
+    });
+
 });
 
 document.querySelector(".hamburger").addEventListener("click", function () {
