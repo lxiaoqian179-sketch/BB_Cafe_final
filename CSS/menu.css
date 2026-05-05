@@ -362,6 +362,7 @@ body {
 }
 
 .modal-body h3 .modal-title-en {
+    display: block;
     font-family: var(--logo-font);
     font-size: 30px;
     font-style: italic;
@@ -384,15 +385,15 @@ body {
     margin-bottom: 10px;
 }
 
-#americano-card {
+.product-card {
     cursor: pointer;
 }
 
-#americano-card .img-box {
+.product-card .img-box {
     transition: transform 0.25s ease;
 }
 
-#americano-card:hover .img-box {
+.product-card:hover .img-box {
     transform: translateY(-6px);
 }
 

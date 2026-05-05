@@ -46,6 +46,40 @@ document.querySelector(".next").onclick = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    // ===== 商品彈窗 =====
+    const productModal = document.getElementById("product-modal");
+    const productOverlay = document.getElementById("product-modal-overlay");
+    const productClose = productModal.querySelector(".modal-close");
+    const productImage = document.getElementById("product-modal-image");
+    const productTitleZh = productModal.querySelector(".modal-title-zh");
+    const productTitleEn = productModal.querySelector(".modal-title-en");
+    const productDescription = document.getElementById("product-modal-description");
+
+    const openProductModal = (card) => {
+        productImage.src = card.dataset.image || card.querySelector("img").src;
+        productImage.alt = card.dataset.itemZh;
+        productTitleZh.textContent = card.dataset.itemZh;
+        productTitleEn.textContent = card.dataset.itemEn;
+        productDescription.textContent = card.dataset.description || "";
+        productModal.classList.add("active");
+        productModal.setAttribute("aria-hidden", "false");
+    };
+
+    const closeProductModal = () => {
+        productModal.classList.remove("active");
+        productModal.setAttribute("aria-hidden", "true");
+    };
+
+    document.querySelectorAll(".product-card").forEach(card => {
+        card.addEventListener("click", () => openProductModal(card));
+    });
+
+    productOverlay.addEventListener("click", closeProductModal);
+    productClose.addEventListener("click", closeProductModal);
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && productModal.classList.contains("active")) closeProductModal();
+    });
+
     // ===== 回到 Popular 區 =====
     window.scrollToPopularTop = function () {
         const target = document.getElementById("popularTop");

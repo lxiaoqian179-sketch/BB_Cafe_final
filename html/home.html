@@ -78,22 +78,22 @@
             <p class="desc">― 匯集最受青睞的人氣品項，每一道都以細膩工法展現迷人的風味層次 ―</p>
             <div class="popular-grid">
 
-                <div class="popular-item">
-                    <div class="img-box"><img src="../img/home/coffee-affogato.jpg" alt="咖啡"></div>
+                <div class="popular-item product-card" data-item-zh="阿芙佳朵" data-item-en="Affogato" data-image="../img/home/coffee-affogato.jpg" data-description="阿芙佳朵，濃縮咖啡淋在香草冰淇淋上，甜蜜中帶有咖啡深度。">
+                    <div class="img-box"><img src="../img/home/coffee-affogato.jpg" alt="阿芙佳朵"></div>
                     <h4>Top 1</h4>
                     <h5>阿芙佳朵</h5>
                     <p>Affogato</p>
                 </div>
 
-                <div class="popular-item">
-                    <div class="img-box"><img src="../img/home/pasta-clams.jpg" alt="咖啡"></div>
+                <div class="popular-item product-card" data-item-zh="白酒蛤蜊蒜香義大利麵" data-item-en="White Wine Vongole Pasta" data-image="../img/home/pasta-clams.jpg" data-description="白酒蛤蜊蒜香義大利麵，清爽白酒和新鮮蛤蜊澤香了麵條，海味鮮甜，風味清爽迷人。">
+                    <div class="img-box"><img src="../img/home/pasta-clams.jpg" alt="白酒蛤蜊蒜香義大利麵"></div>
                     <h4>Top 2</h4>
                     <h5>白酒蛤蜊蒜香義大利麵</h5>
                     <p>White Wine Vongole Pasta</p>
                 </div>
 
-                <div class="popular-item">
-                    <div class="img-box"><img src="../img/home/pizza-arugula.jpg" alt="咖啡"></div>
+                <div class="popular-item product-card" data-item-zh="義式帕瑪火腿芝麻葉披薩" data-item-en="Prosciutto & Arugula Pizza" data-image="../img/home/pizza-arugula.jpg" data-description="義式帕瑪火腿芝麻葉披薩，帕瑪火腿鹹嫩鮮美，搭配芝麻葉清香微苦，披薩底酥香不減，層次豐富令人回味。">
+                    <div class="img-box"><img src="../img/home/pizza-arugula.jpg" alt="義式帕瑪火腿芝麻葉披薩"></div>
                     <h4>Top 3</h4>
                     <h5>義式帕瑪火腿芝麻葉披薩</h5>
                     <p>Prosciutto & Arugula Pizza</p>
@@ -263,6 +263,19 @@
         </section>
     </main>
 
+
+    <!-- 商品詳細彈窗 -->
+    <div class="modal" id="product-modal" aria-hidden="true">
+        <div class="modal-overlay" id="product-modal-overlay"></div>
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="product-modal-title">
+            <button class="modal-close" aria-label="關閉彈窗">&times;</button>
+            <div class="modal-body">
+                <img src="" alt="商品圖片" id="product-modal-image">
+                <h3 id="product-modal-title"><span class="modal-title-zh">商品名稱</span> <span class="modal-title-en">Product</span></h3>
+                <p id="product-modal-description">商品說明</p>
+            </div>
+        </div>
+    </div>
 
     <!-- ===== 回到人氣商品 按鈕 ===== -->
     <div class="back-to-top">

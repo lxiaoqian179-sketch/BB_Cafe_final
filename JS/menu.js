@@ -54,30 +54,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
     observer.observe(menuPage);
 
-    const americanoCard = document.getElementById("americano-card");
-    const americanoModal = document.getElementById("americano-modal");
-    const americanoOverlay = document.getElementById("americano-modal-overlay");
-    const americanoClose = americanoModal.querySelector(".modal-close");
+    const productModal = document.getElementById("product-modal");
+    const productOverlay = document.getElementById("product-modal-overlay");
+    const productClose = productModal.querySelector(".modal-close");
+    const productImage = document.getElementById("product-modal-image");
+    const productTitleZh = productModal.querySelector(".modal-title-zh");
+    const productTitleEn = productModal.querySelector(".modal-title-en");
+    const productDescription = document.getElementById("product-modal-description");
 
-    const openAmericanoModal = () => {
-        americanoModal.classList.add("active");
-        americanoModal.setAttribute("aria-hidden", "false");
+    const productFeaturesDivider = productModal.querySelector("hr");
+    const productFeaturesList = document.getElementById("product-modal-features");
+
+    const openProductModal = (card) => {
+        const itemZh = card.dataset.itemZh;
+        const itemEn = card.dataset.itemEn;
+        const imageSrc = card.dataset.image || card.querySelector("img").src;
+        const description = card.dataset.description || "此商品可提供客製化服務。";
+
+        productImage.src = imageSrc;
+        productImage.alt = `${itemZh} ${itemEn}`;
+        productTitleZh.textContent = itemZh;
+        productTitleEn.textContent = itemEn;
+        productDescription.textContent = description;
+
+        const hasFeatures = card.dataset.features;
+        productFeaturesDivider.style.display = hasFeatures ? "" : "none";
+        productFeaturesList.style.display = hasFeatures ? "" : "none";
+
+        productModal.classList.add("active");
+        productModal.setAttribute("aria-hidden", "false");
     };
 
-    const closeAmericanoModal = () => {
-        americanoModal.classList.remove("active");
-        americanoModal.setAttribute("aria-hidden", "true");
+    const closeProductModal = () => {
+        productModal.classList.remove("active");
+        productModal.setAttribute("aria-hidden", "true");
     };
 
-    if (americanoCard) {
-        americanoCard.addEventListener("click", openAmericanoModal);
-    }
+    document.querySelectorAll(".product-card").forEach(card => {
+        card.addEventListener("click", () => openProductModal(card));
+    });
 
-    americanoOverlay.addEventListener("click", closeAmericanoModal);
-    americanoClose.addEventListener("click", closeAmericanoModal);
+    productOverlay.addEventListener("click", closeProductModal);
+    productClose.addEventListener("click", closeProductModal);
     document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && americanoModal.classList.contains("active")) {
-            closeAmericanoModal();
+        if (event.key === "Escape" && productModal.classList.contains("active")) {
+            closeProductModal();
         }
     });
 

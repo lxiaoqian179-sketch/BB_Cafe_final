@@ -796,6 +796,94 @@ body {
 
 
 
+/* ============ 商品彈窗 ============ */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 24px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+}
+
+.modal-content {
+    position: relative;
+    width: min(560px, 100%);
+    background: #fff;
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(124, 86, 49, 0.1);
+    color: #7e5c3f;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-body img {
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    margin-bottom: 18px;
+}
+
+.modal-body h3 {
+    margin-bottom: 12px;
+    font-size: 34px;
+    color: #3f2b1c;
+}
+
+.modal-body h3 .modal-title-zh {
+    font-family: var(--serif);
+}
+
+.modal-body h3 .modal-title-en {
+    display: block;
+    font-family: var(--logo-font);
+    font-size: 30px;
+    font-style: italic;
+}
+
+.modal-body p {
+    color: #5a4b3a;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.product-card {
+    cursor: pointer;
+}
+
+.product-card .img-box {
+    transition: transform 0.25s ease;
+}
+
+.product-card:hover .img-box {
+    transform: translateY(-6px);
+}
+
 /* ============ Footer ============ */
 .footer {
     background: #766349;

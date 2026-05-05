@@ -1,0 +1,51 @@
+⭐Step 1：news.html 的卡片加 <a> 超連結
+例如 : <a href="news-detail.html?id=1">
+
+
+⭐Step 2：建立資料（先用 mock）
+✴️news-detail.js
+
+const newsData = {
+  1: {
+    category: '最新活動 Latest Events',
+    title: '冬日暖心優惠',
+    date: '2025.12.01 – 2025.12.31',
+    image: '../img/news/news-a.jpg',
+    imageAlt: '冬日暖心優惠',
+    items: [
+      '活動品項：卡布奇諾、馥列白、美式咖啡',
+      '活動折扣：享 <strong>75 折</strong> 優惠',
+      '活動日期：2025/12/01 – 12/31',
+      '活動地點：Brew &amp; Belle Café 全門市',
+    ],
+    paragraphs: [
+      '寒冷的冬日，最需要一杯暖心好咖啡陪伴。本月特別推出三款人氣咖啡限時 75 折優惠，讓你每一天都能以實惠的價格享受職人手沖的溫暖滋味。',
+      '無論是濃郁紮實的美式咖啡、綿密滑順的卡布奇諾，還是奶泡細緻的馥列白，都以最嚴選的豆子與最用心的沖煮，在每個冬日午後為你帶來一份屬於 Brew &amp; Belle 的溫暖。',
+    ],
+    note: '※ 本優惠不與其他活動合併使用。<br>※ 活動期間如有異動，以門市公告為準。',
+  },
+
+
+
+
+⭐Step 3：讀取 URL 參數，找到對應的消息資料
+(function () {
+  const id = new URLSearchParams(window.location.search).get('id');
+  const data = newsData[id];
+
+  if (!data) {
+    document.querySelector('.article-layout').innerHTML =
+      '<p style="padding:60px;font-family:serif;color:#888;">找不到此消息，請返回最新消息頁面。</p>';
+    return;
+  }
+
+
+
+⭐Step 4：塞進畫面
+document.title = data.title + '｜Brew & Belle Café';
+  document.getElementById('detail-image').src = data.image;
+  document.getElementById('detail-image').alt = data.imageAlt;
+  document.getElementById('detail-category').textContent = data.category;
+  document.getElementById('detail-title').textContent = data.title;
+  document.getElementById('detail-date').textContent = data.date;
+
